@@ -1,4 +1,4 @@
-baseURL = 'https://alice.github.io/roadside-station/'
+baseURL = 'https://itizawa.github.io/roadside-station/'
 languageCode = 'ja'
 title = '道の駅巡り'
 theme = 'roadside'
