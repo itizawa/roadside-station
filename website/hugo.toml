@@ -1,8 +1,0 @@
-baseURL = 'https://itizawa.github.io/roadside-station/'
-languageCode = 'ja'
-title = '道の駅巡り'
-theme = 'roadside'
-
-[params]
-description = '関東の道の駅を徒歩で巡るプロジェクト'
-author = 'Alice'
