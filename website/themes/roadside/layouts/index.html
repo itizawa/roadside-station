@@ -1,7 +1,24 @@
 {{ define "main" }}
 <section class="hero">
-  <h1>{{ .Site.Title }}</h1>
-  <p class="tagline">{{ .Site.Params.description }}</p>
+  <div class="hero-text">
+    <h1>{{ .Site.Title }}</h1>
+    <p class="tagline">{{ .Site.Params.description }}</p>
+  </div>
+  <svg class="hero-illustration" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="道をゆく車のイラスト">
+    <rect width="400" height="220" rx="16" fill="#dbe6ee"/>
+    <circle cx="335" cy="55" r="26" fill="#eaddc4"/>
+    <path d="M0 150 Q80 112 160 150 T400 148 V220 H0 Z" fill="#b7c4b0"/>
+    <path d="M0 172 Q100 142 220 172 T400 168 V220 H0 Z" fill="#9fb0a6"/>
+    <path d="M120 220 L172 128 L232 128 L284 220 Z" fill="#7a8590"/>
+    <path d="M197 158 L194 173 M190 193 L187 208" stroke="#e9e4d8" stroke-width="4" stroke-linecap="round"/>
+    <g transform="translate(150,150)">
+      <rect x="0" y="18" width="70" height="22" rx="6" fill="#5b7a99"/>
+      <path d="M10 18 Q18 2 34 2 H46 Q58 2 62 18 Z" fill="#5b7a99"/>
+      <path d="M16 16 Q22 7 32 7 H44 Q52 7 56 16 Z" fill="#dce8ee"/>
+      <circle cx="16" cy="40" r="7" fill="#3f4750"/>
+      <circle cx="54" cy="40" r="7" fill="#3f4750"/>
+    </g>
+  </svg>
 </section>
 
 {{ $allPages := .Site.AllPages }}
