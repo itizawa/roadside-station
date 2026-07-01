@@ -35,6 +35,7 @@ website/                # 記録閲覧用のWebサイト
 
 1. 訪問する道の駅を選定し、`stations/` にフォルダを作成
 2. `research.md` を埋める（アクセス・特産品・営業時間などの下調べ）
+   - 1〜2はClaude Codeのスキル `/research-station [道の駅名] [訪問日]` で自動化できる
 3. `route.md` を埋める（徒歩ルートの詳細・撮影ポイント）
 4. `script.md` で台本を作成
 5. 訪問・撮影
