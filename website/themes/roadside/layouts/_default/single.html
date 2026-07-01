@@ -1,0 +1,97 @@
+{{ define "main" }}
+<article class="station-detail">
+  <header class="station-header">
+    <h1>{{ .Title }}</h1>
+    <p class="tagline">{{ .Description }}</p>
+    <div class="meta">
+      <span class="date">訪問日：{{ .Date.Format "2006年1月2日" }}</span>
+      <span class="location">📍 {{ .Params.location }}</span>
+    </div>
+  </header>
+
+  <div class="station-content">
+    {{ .Content }}
+  </div>
+
+  <section class="access-section">
+    <h2>アクセス方法</h2>
+    
+    {{ if .Params.accessByTrain }}
+    <div class="access-route">
+      <h3>🚇 電車 + 徒歩</h3>
+      <dl>
+        <dt>最寄り駅</dt>
+        <dd>{{ .Params.accessByTrain.nearestStation }}</dd>
+        
+        <dt>駅から道の駅までの距離</dt>
+        <dd>{{ .Params.accessByTrain.distance }}</dd>
+        
+        <dt>徒歩所要時間</dt>
+        <dd>{{ .Params.accessByTrain.walkingTime }}</dd>
+        
+        {{ if .Params.accessByTrain.alternatives }}
+        <dt>バス等の代替手段</dt>
+        <dd>
+          <ul>
+            {{ range .Params.accessByTrain.alternatives }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </dd>
+        {{ end }}
+      </dl>
+    </div>
+    {{ end }}
+
+    {{ if .Params.accessByCar }}
+    <div class="access-route">
+      <h3>🚗 車</h3>
+      <dl>
+        <dt>最寄り高速IC</dt>
+        <dd>{{ .Params.accessByCar.nearestIC }}</dd>
+        
+        <dt>駐車場</dt>
+        <dd>{{ .Params.accessByCar.parking }}</dd>
+        
+        {{ if .Params.accessByCar.parkingSpaces }}
+        <dt>駐車台数</dt>
+        <dd>{{ .Params.accessByCar.parkingSpaces }}</dd>
+        {{ end }}
+      </dl>
+    </div>
+    {{ end }}
+  </section>
+
+  {{ if .Params.basicInfo }}
+  <section class="basic-info">
+    <h2>基本情報</h2>
+    <dl>
+      {{ with .Params.basicInfo.website }}
+      <dt>公式サイト</dt>
+      <dd><a href="{{ . }}" target="_blank">{{ . }}</a></dd>
+      {{ end }}
+      
+      {{ with .Params.basicInfo.concept }}
+      <dt>コンセプト</dt>
+      <dd>{{ . }}</dd>
+      {{ end }}
+      
+      {{ with .Params.basicInfo.openingDate }}
+      <dt>開業日</dt>
+      <dd>{{ . }}</dd>
+      {{ end }}
+      
+      {{ with .Params.basicInfo.operatingHours }}
+      <dt>営業時間</dt>
+      <dd>{{ . }}</dd>
+      {{ end }}
+      
+      {{ with .Params.basicInfo.closedDays }}
+      <dt>定休日</dt>
+      <dd>{{ . }}</dd>
+      {{ end }}
+    </dl>
+  </section>
+  {{ end }}
+</article>
+{{ end }}

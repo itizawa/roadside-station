@@ -1,0 +1,47 @@
+{{ define "main" }}
+<section class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}
+  <div class="description">
+    {{ . }}
+  </div>
+  {{ end }}
+</section>
+
+<section class="stations-list">
+  <div class="stations-grid">
+    {{ range (.Pages).ByDate.Reverse }}
+    <article class="station-card">
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      <p class="location">📍 {{ .Params.location }}</p>
+      <p class="date">訪問日：{{ .Date.Format "2006年1月2日" }}</p>
+      
+      <div class="access-info">
+        {{ if .Params.accessByTrain }}
+        <div class="access-method">
+          <strong>🚇 電車+徒歩</strong>
+          <ul>
+            <li>最寄り駅: {{ .Params.accessByTrain.nearestStation }}</li>
+            <li>距離: {{ .Params.accessByTrain.distance }}</li>
+            <li>徒歩時間: {{ .Params.accessByTrain.walkingTime }}</li>
+          </ul>
+        </div>
+        {{ end }}
+        
+        {{ if .Params.accessByCar }}
+        <div class="access-method">
+          <strong>🚗 車</strong>
+          <ul>
+            <li>最寄りIC: {{ .Params.accessByCar.nearestIC }}</li>
+            <li>駐車場: {{ .Params.accessByCar.parking }}</li>
+          </ul>
+        </div>
+        {{ end }}
+      </div>
+      
+      <a href="{{ .Permalink }}" class="btn btn-primary">詳しく見る</a>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
