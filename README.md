@@ -12,6 +12,7 @@
   - ブログ/note：アクセス・営業時間・商品リストなど詳細情報
 
 コンセプトの検討経緯・ターゲット分析・拡散チャネルの詳細は [docs/concept.md](docs/concept.md) を参照。
+サムネイル・タイトルの参考事例分析は [docs/thumbnail-title-reference.md](docs/thumbnail-title-reference.md) を参照。
 
 ## 道の駅の選定基準
 
