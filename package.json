@@ -1,0 +1,10 @@
+{
+  "name": "roadside-station",
+  "private": true,
+  "scripts": {
+    "install:website": "pnpm --dir website install",
+    "dev": "pnpm --dir website dev",
+    "build": "pnpm --dir website build",
+    "preview": "pnpm --dir website preview"
+  }
+}

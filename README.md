@@ -32,6 +32,17 @@ _template/              # 新しい回を始めるときにコピーするテン
 website/                # 記録閲覧用のWebサイト
 ```
 
+### Webサイトの起動
+
+ルートディレクトリで以下を実行すれば、`website/` に `cd` せずに操作できる。
+
+```
+pnpm install:website  # 初回のみ
+pnpm dev              # 開発サーバー起動
+pnpm build            # ビルド
+pnpm preview          # ビルド結果のプレビュー
+```
+
 新しい回を始めるときは `stations/` の下に `YYYY-MM-DD_道の駅名` のフォルダを作り、`_template/` の中身をコピーして使う。
 
 ## 進行フロー
