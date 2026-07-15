@@ -4,6 +4,7 @@ import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
 import StationList from './pages/StationList.jsx'
 import StationDetail from './pages/StationDetail.jsx'
+import VisitHistory from './pages/VisitHistory.jsx'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/roadside-stations" element={<StationList />} />
           <Route path="/roadside-stations/:slug" element={<StationDetail />} />
+          <Route path="/visit-history" element={<VisitHistory />} />
         </Routes>
       </main>
       <Footer />
