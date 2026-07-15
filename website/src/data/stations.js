@@ -56,4 +56,52 @@ export const stations = [
 - 桶川市は近隣と比べて酪農が盛んで、県産牛乳・卵を使ったスイーツに力を入れている
     `.trim(),
   },
+  {
+    slug: 'ashigakubo',
+    title: '道の駅 果樹公園あしがくぼ',
+    date: '2026-06-14',
+    description: '埼玉県秩父郡横瀬町 - 果樹公園の道の駅',
+    location: '埼玉県秩父郡横瀬町',
+    accessByCar: {
+      nearestIC: '関越自動車道 花園ICから約40分',
+      parking: '無料',
+      parkingSpaces: '要確認',
+    },
+    basicInfo: {
+      operatingHours: '要確認',
+      closedDays: '要確認',
+      concept: '果樹公園',
+    },
+    content: `
+## 基本情報
+
+- **所在地**: 埼玉県秩父郡横瀬町
+
+（詳細は今後追記予定）
+    `.trim(),
+  },
+  {
+    slug: 'showa',
+    title: '道の駅 庄和',
+    date: '2026-05-02',
+    description: '埼玉県春日部市の道の駅',
+    location: '埼玉県春日部市',
+    accessByTrain: {
+      nearestStation: '要確認',
+      distance: '要確認',
+      walkingTime: '要確認',
+      alternatives: [],
+    },
+    basicInfo: {
+      operatingHours: '要確認',
+      closedDays: '要確認',
+    },
+    content: `
+## 基本情報
+
+- **所在地**: 埼玉県春日部市
+
+（詳細は今後追記予定）
+    `.trim(),
+  },
 ]
