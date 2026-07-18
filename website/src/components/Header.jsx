@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 const menuItems = [
   { label: 'トップページ', to: '/' },
   { label: '訪問履歴', to: '/visit-history' },
+  { label: '今後の予定', to: '/next-visits' },
+  { label: '道の駅の紹介', to: '/mitinoeki-syokai' },
 ]
 
 export default function Header() {
