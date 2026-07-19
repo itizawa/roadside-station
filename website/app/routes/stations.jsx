@@ -1,9 +1,21 @@
 import { stations } from '../data/stations.js'
 import StationCard from '../components/StationCard.jsx'
 
-export default function StationList() {
-  const sorted = [...stations].sort((a, b) => new Date(b.date) - new Date(a.date))
+export function meta() {
+  return [
+    { title: '訪問済み道の駅一覧 | 道の駅めぐり日記' },
+    {
+      name: 'description',
+      content: '関東の道の駅を「徒歩」で巡り、YouTube・ブログ/noteで発信するプロジェクトの訪問済み道の駅一覧です。',
+    },
+  ]
+}
 
+export function loader() {
+  return [...stations].sort((a, b) => new Date(b.date) - new Date(a.date))
+}
+
+export default function StationList({ loaderData: sorted }) {
   return (
     <>
       <div className="page-header">

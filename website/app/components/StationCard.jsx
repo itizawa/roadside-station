@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 
 export default function StationCard({ station, variant = 'default' }) {
   const formattedDate = new Date(station.date).toLocaleDateString('ja-JP', {
