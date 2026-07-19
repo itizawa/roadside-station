@@ -1,7 +1,18 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import { visitHistory } from '../data/visitHistory.js'
 
-export default function VisitHistory() {
+export function meta() {
+  return [
+    { title: '訪問履歴 | 道の駅めぐり日記' },
+    { name: 'description', content: 'これまでに巡った道の駅の記録です。少しずつ更新中。' },
+  ]
+}
+
+export function loader() {
+  return visitHistory
+}
+
+export default function VisitHistory({ loaderData: visitHistory }) {
   return (
     <>
       <div className="visit-history-header">

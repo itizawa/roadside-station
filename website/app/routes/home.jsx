@@ -4,9 +4,13 @@ import { profile, socialLinks } from '../data/profile.js'
 import { visitStats, prefectureMap } from '../data/visitStats.js'
 import StationCard from '../components/StationCard.jsx'
 
-export default function Home() {
+export function loader() {
   const sorted = [...stations].sort((a, b) => new Date(b.date) - new Date(a.date))
-  const recentVisits = sorted.slice(0, 3)
+  return { recentVisits: sorted.slice(0, 3) }
+}
+
+export default function Home({ loaderData }) {
+  const { recentVisits } = loaderData
 
   return (
     <>

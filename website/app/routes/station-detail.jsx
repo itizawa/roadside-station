@@ -1,20 +1,35 @@
-import { useParams, Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import ReactMarkdown from 'react-markdown'
 import { stations } from '../data/stations.js'
 
-export default function StationDetail() {
-  const { slug } = useParams()
-  const station = stations.find((s) => s.slug === slug)
-
+export function loader({ params }) {
+  const station = stations.find((s) => s.slug === params.slug)
   if (!station) {
-    return (
-      <div className="page-header">
-        <h1>道の駅が見つかりません</h1>
-        <Link to="/roadside-stations">一覧へ戻る</Link>
-      </div>
-    )
+    throw new Response('Not Found', { status: 404 })
   }
+  return station
+}
 
+export function meta({ loaderData: station }) {
+  if (!station) {
+    return [{ title: '道の駅が見つかりません | 道の駅めぐり日記' }]
+  }
+  return [
+    { title: `${station.title} | 道の駅めぐり日記` },
+    { name: 'description', content: station.description },
+  ]
+}
+
+export function ErrorBoundary() {
+  return (
+    <div className="page-header">
+      <h1>道の駅が見つかりません</h1>
+      <Link to="/roadside-stations">一覧へ戻る</Link>
+    </div>
+  )
+}
+
+export default function StationDetail({ loaderData: station }) {
   const formattedDate = new Date(station.date).toLocaleDateString('ja-JP', {
     year: 'numeric',
     month: 'long',
