@@ -29,6 +29,7 @@ stations/               # 道の駅ごとのフォルダ置き場
     ├── script.md            # YouTube台本
     └── publish-notes.md    # 公開後の振り返り・記事化メモ・SNS文言
 _template/              # 新しい回を始めるときにコピーするテンプレート
+docs/progress.md        # 週1投稿の予実管理ダッシュボード（`progress-station`スキルで自動更新）
 website/                # 記録閲覧用のWebサイト
 ```
 
@@ -57,3 +58,5 @@ pnpm preview          # ビルド結果のプレビュー
 5. 訪問・撮影
 6. 動画編集・公開
 7. `publish-notes.md` に振り返りとブログ/note用のメモを残す
+
+進行中は随時 `/progress-station` で `docs/progress.md`（予実管理ダッシュボード）を更新し、週1投稿（2026-07-31週〜）に遅延がないか確認する。
