@@ -13,7 +13,7 @@
 | `jurian_angyo_nemaki.jpg` | https://jurian.or.jp/angyo/index.php | 「根巻き」技法の完成品クローズアップ（麻布とワラ縄で根を保護） | Part3（植木の里の歴史・伝統技術に触れる場合） | 画像提供：川口緑化センター樹里安 公式サイト |
 | `jurian_angyo_magemono.jpg` | https://jurian.or.jp/angyo/index.php | 「曲げもの（曲幹づくり）」で仕立てられた樹木 | Part3（同上） | 画像提供：川口緑化センター樹里安 公式サイト |
 | `jurian_angyo_edamono.jpg` | https://jurian.or.jp/angyo/index.php | 「赤山の枝物」（生け花材料の枝もの） | Part3（同上、余裕があれば） | 画像提供：川口緑化センター樹里安 公式サイト |
-| `jurian_angyo_gonnojyo_illustration.png` | https://jurian.or.jp/angyo/index.php | 「植木売之図」— 吉田権之丞が苗木を天秤棒で運ぶ様子を描いたイラスト | Part3（吉田権之丞のナレーション箇所と直結・最有力候補） | 画像提供：川口緑化センター樹里安 公式サイト |
+| `jurian_angyo_gonnojyo_illustration.png` | https://jurian.or.jp/angyo/index.php | 「植木売之図」— 吉田権之丞が苗木を天秤棒で運ぶ様子を描いたイラスト | ~~Part3~~ **不使用予定**：レビューを受けて江戸時代の起源エピソード（吉田権之丞）を本編ナレーションから削除し、1935年・1980年の2度のピークを主軸にする構成に変更したため。ブログ/note版で江戸期の由来に触れる場合の保険として残す | 画像提供：川口緑化センター樹里安 公式サイト |
 | `andg_interior_dining.jpg` | https://kosmy-presents.jp/andg/ | ANDG店内、"Cafe Restaurant ANDG"のロゴサインと客席 | Part4後半／Part5冒頭（ANDG紹介） | 画像提供：Cafe Restaurant ANDG 公式サイト |
 | `andg_entrance_giraffe_mural.jpg` | https://kosmy-presents.jp/andg/ | ANDG入口、キリンの壁画とGRAND OPENポスター | Part5（ANDG紹介の入口カット） | 画像提供：Cafe Restaurant ANDG 公式サイト |
 | `andg_menu_cupola_curry.jpeg` | https://kosmy-presents.jp/andg/ | ANDGのメニュー例（キューポラカレー） | ~~Part5~~ **不使用予定**：実際にキューポラカレーを注文して自分で撮った写真があるため、この引用画像は使わない。撮影漏れがあった場合の保険としてのみ残す | 画像提供：Cafe Restaurant ANDG 公式サイト |
