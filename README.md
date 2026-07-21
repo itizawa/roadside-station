@@ -38,6 +38,7 @@ stations/               # 道の駅ごとのフォルダ置き場
     └── publish-notes.md    # 公開後の振り返り・記事化メモ・SNS文言
 _template/              # 新しい回を始めるときにコピーするテンプレート
 docs/progress.md        # 週1投稿の予実管理ダッシュボード（`progress-station`スキルで自動更新）
+docs/learnings.md       # リサーチのトリビア選定・台本フィードバックの傾向メモ（`research-station`/`script-station`スキルが読み書き）
 website/                # 記録閲覧用のWebサイト
 ```
 
@@ -63,12 +64,14 @@ pnpm preview          # ビルド結果のプレビュー
 ## 進行フロー
 
 1. 訪問する道の駅を選定し、`stations/` にフォルダを作成
-2. `research.md` を埋める（アクセス・特産品・営業時間などの下調べ）
+2. `research.md` を埋める（アクセス・特産品・営業時間の下調べに加え、地域の歴史・トリビア候補を複数出してユーザーが選定する）
    - 1〜2はClaude Codeのスキル `/research-station [道の駅名] [訪問日]` で自動化できる
 3. `route.md` を埋める（徒歩ルートの詳細・撮影ポイント）
-4. `script.md` で台本を作成
+4. `script.md` で台本を作成・ブラッシュアップする
+   - Claude Codeのスキル `/script-station [道の駅名]` で初稿作成〜フィードバックを反映した反復修正ができる
 5. 訪問・撮影
 6. 動画編集（Filmora）・公開
 7. `publish-notes.md` に振り返りとブログ/note用のメモを残す
 
 進行中は随時 `/progress-station` で `docs/progress.md`（予実管理ダッシュボード）を更新し、週1投稿（2026-07-31週〜）に遅延がないか確認する。
+リサーチのトリビア選定や台本のフィードバックで得た傾向は `docs/learnings.md` に蓄積され、次回以降の `research-station`／`script-station` の実行に自動的に反映される。
