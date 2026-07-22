@@ -3,8 +3,14 @@ export type VisitStatus = 'visited' | 'planned' | 'postponed'
 
 export type TaskStatus = 'done' | 'todo' | 'in_progress' | 'not_scheduled' | 'draft_feedback_pending'
 
+export interface Coordinates {
+  lat: number
+  lng: number
+}
+
 export interface AccessByTrain {
   nearestStation: string
+  nearestStationCoordinates?: Coordinates
   distance: string
   walkingTime: string
   alternatives: string[]
@@ -43,6 +49,7 @@ export interface Station {
   title: string
   prefecture: string
   address: string
+  coordinates?: Coordinates
   visitDate: string | null
   visitStatus: VisitStatus
   transport: string

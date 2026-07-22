@@ -19,6 +19,7 @@ export const stations = visitedStations.map((s) => ({
   date: s.visitDate as string,
   description: s.description,
   location: s.address,
+  ...(s.coordinates ? { coordinates: s.coordinates } : {}),
   ...(s.accessByTrain ? { accessByTrain: s.accessByTrain } : {}),
   ...(s.accessByCar ? { accessByCar: s.accessByCar } : {}),
   ...(s.basicInfo ? { basicInfo: s.basicInfo } : {}),

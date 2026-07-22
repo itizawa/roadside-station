@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import ReactMarkdown from 'react-markdown'
 import { stations } from '../data/stations'
+import RouteMap from '../components/RouteMap'
 import type { Route } from './+types/station-detail'
 
 export function loader({ params }: Route.LoaderArgs) {
@@ -82,6 +83,15 @@ export default function StationDetail({ loaderData: station }: Route.ComponentPr
               </div>
             )}
           </div>
+
+          {station.accessByTrain.nearestStationCoordinates && station.coordinates && (
+            <RouteMap
+              origin={station.accessByTrain.nearestStationCoordinates}
+              originLabel={station.accessByTrain.nearestStation}
+              destination={station.coordinates}
+              destinationLabel={station.title}
+            />
+          )}
         </section>
       )}
 
