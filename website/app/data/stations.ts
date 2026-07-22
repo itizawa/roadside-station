@@ -1,6 +1,7 @@
-import { visitedStations } from './stationsSource.js'
+import { visitedStations } from './stationsSource'
+import type { Station } from './stationsTypes'
 
-function buildContent(station) {
+function buildContent(station: Station): string {
   const parts = ['## 基本情報', '', `- **所在地**: ${station.address}`]
   if (station.basicInfo?.openingDate) parts.push(`- **開業日**: ${station.basicInfo.openingDate}`)
   if (station.basicInfo?.concept) parts.push(`- **コンセプト**: ${station.basicInfo.concept}`)

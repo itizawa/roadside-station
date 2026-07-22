@@ -1,10 +1,18 @@
-import { prefectures, visitedStations } from './stationsSource.js'
+import { prefectures, visitedStations } from './stationsSource'
 
 // 「訪問済み道の駅」統計カードでの都道府県表示順
 const STATS_ORDER = ['ibaraki', 'tochigi', 'gunma', 'saitama', 'chiba', 'tokyo', 'kanagawa', 'yamanashi', 'nagano']
 
+interface MapLayout {
+  top: number
+  left: number
+  w: number
+  h: number
+  rotate: number
+}
+
 // 手描きの関東+甲信シルエット上の配置（地理的な目安の位置）
-const MAP_LAYOUT = {
+const MAP_LAYOUT: Record<string, MapLayout> = {
   nagano: { top: 2, left: 0, w: 24, h: 34, rotate: -3 },
   gunma: { top: 4, left: 24, w: 25, h: 30, rotate: -3 },
   tochigi: { top: 2, left: 51, w: 22, h: 30, rotate: 2 },
@@ -16,7 +24,7 @@ const MAP_LAYOUT = {
   chiba: { top: 46, left: 61, w: 33, h: 44, rotate: -2 },
 }
 
-const visitedCountByPref = {}
+const visitedCountByPref: Record<string, number> = {}
 for (const key of Object.keys(prefectures)) visitedCountByPref[key] = 0
 for (const s of visitedStations) visitedCountByPref[s.prefecture] += 1
 

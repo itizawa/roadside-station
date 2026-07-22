@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import { visitHistory } from '../data/visitHistory.js'
+import { visitHistory } from '../data/visitHistory'
 
 export function meta() {
   return [

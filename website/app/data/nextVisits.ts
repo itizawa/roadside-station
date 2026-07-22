@@ -1,4 +1,4 @@
-import { prefectures, formatJaDate, upcomingStations } from './stationsSource.js'
+import { prefectures, formatJaDate, upcomingStations } from './stationsSource'
 
 export const nextVisits = upcomingStations().map((s) => ({
   name: s.title,

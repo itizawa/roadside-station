@@ -1,4 +1,4 @@
-import { stations } from '../data/stations.js'
+import { stations } from '../data/stations'
 import StationCard from '../components/StationCard.jsx'
 
 export function meta() {

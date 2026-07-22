@@ -1,4 +1,4 @@
-import { stations } from './app/data/stations.js'
+import { stations } from './app/data/stations'
 
 export default {
   ssr: false, // ランタイムサーバー不要。GitHub Pagesの静的配信のみで完結させる

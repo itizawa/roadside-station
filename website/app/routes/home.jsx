@@ -1,7 +1,7 @@
-import { stations } from '../data/stations.js'
-import { nextVisits } from '../data/nextVisits.js'
+import { stations } from '../data/stations'
+import { nextVisits } from '../data/nextVisits'
 import { profile, socialLinks } from '../data/profile.js'
-import { visitStats, prefectureMap } from '../data/visitStats.js'
+import { visitStats, prefectureMap } from '../data/visitStats'
 import StationCard from '../components/StationCard.jsx'
 
 export function loader() {
