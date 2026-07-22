@@ -1,0 +1,280 @@
+{
+  "_comment": "このファイルが道の駅めぐりプロジェクトのSSOT（唯一の正）です。scripts/generate-site-data.mjs がここから website/app/data/*.js を自動生成します。docs/progress.md の『投稿ステータス一覧』の元データもここにあります。手動で編集した後は `node scripts/generate-site-data.mjs` を実行してください。",
+  "prefectures": {
+    "gunma": { "name": "群馬県", "total": 33 },
+    "tochigi": { "name": "栃木県", "total": 25 },
+    "ibaraki": { "name": "茨城県", "total": 16 },
+    "saitama": { "name": "埼玉県", "total": 21 },
+    "chiba": { "name": "千葉県", "total": 30 },
+    "tokyo": { "name": "東京都", "total": 1 },
+    "kanagawa": { "name": "神奈川県", "total": 5 },
+    "yamanashi": { "name": "山梨県", "total": 22 },
+    "nagano": { "name": "長野県", "total": 36 }
+  },
+  "stations": [
+    {
+      "slug": "kawaguchi-angyo",
+      "folder": "2026-07-18_川口・あんぎょう",
+      "title": "道の駅 川口・あんぎょう",
+      "prefecture": "saitama",
+      "address": "埼玉県川口市安行領家844-2",
+      "visitDate": "2026-07-18",
+      "visitStatus": "visited",
+      "transport": "電車+徒歩",
+      "transportIcon": "🚃",
+      "description": "埼玉県川口市 - 植木の里・安行の伝統園芸を伝える道の駅",
+      "highlight": "植木の里・安行の伝統園芸文化を発信する道の駅。名物「樹里安アイス」（安行寒桜／山椒／柚子）も。",
+      "accessByTrain": {
+        "nearestStation": "埼玉高速鉄道（埼玉スタジアム線）戸塚安行駅",
+        "distance": "約1.7km",
+        "walkingTime": "約20〜21分",
+        "alternatives": []
+      },
+      "accessByCar": {
+        "nearestIC": "東京外環自動車道 草加ICから国道298号を和光方面へ約2km",
+        "parking": "無料",
+        "parkingSpaces": "普通車（軽含む）128台・大型5台・身障者用3台"
+      },
+      "basicInfo": {
+        "openingDate": "1996年（平成8年）4月1日開業（道の駅登録は1994年3月）",
+        "operatingHours": "9:00〜18:00（店舗により異なる）",
+        "closedDays": "年末年始、年2回（2月・7月）の施設点検日",
+        "website": "https://www.jurian.or.jp/",
+        "concept": "川口市の伝統産業（植木・園芸・造園）の拠点施設「川口緑化センター 樹里安」に併設。約400年の歴史を持つ「植木の里 安行」の魅力を発信"
+      },
+      "contentSections": [
+        {
+          "heading": "施設構成",
+          "items": [
+            "川口緑化センター「樹里安」（本館）：園芸売店・園芸相談コーナー、JA農産物直売所、和菓子売店、道の駅情報ターミナル",
+            "Cafe Restaurant ANDG（2階・2025年オープンの新しいボタニカルレストラン）",
+            "EV充電施設（第一駐車場・CHAdeMO方式50kW急速充電器1基）"
+          ]
+        },
+        {
+          "heading": "特産品・グルメ",
+          "items": [
+            "樹里安アイス：安行産の素材を使ったミルクベースのジェラート（安行寒桜／山椒／柚子、各270円）",
+            "Cafe Restaurant ANDG：川口産野菜を使った料理",
+            "JA農産物直売所：地元川口産の野菜・果物",
+            "園芸売店：安行の植木・苗木・花木"
+          ]
+        }
+      ],
+      "pipeline": {
+        "research": "done",
+        "route": "done",
+        "script": "done",
+        "editing": "in_progress",
+        "publishDate": null
+      }
+    },
+    {
+      "slug": "ichikawa",
+      "folder": "2026-07-26_いちかわ",
+      "title": "道の駅いちかわ",
+      "prefecture": "chiba",
+      "address": "千葉県市川市国分六丁目10番1号",
+      "visitDate": "2026-07-26",
+      "visitStatus": "planned",
+      "transport": "電車+徒歩",
+      "transportIcon": "🚃",
+      "description": "千葉県市川市 - 都心に最も近い道の駅",
+      "highlight": "外環道千葉県区間の玄関口。都心に最も近い道の駅として地域密着型の展開を掲げる。",
+      "planNote": "都心に一番近い道の駅。北国分駅から徒歩約25分。地元梨のスイーツとイタリアンレストランが目当て。",
+      "accessByTrain": {
+        "nearestStation": "北総線 北国分駅",
+        "distance": "約1.9〜2.0km",
+        "walkingTime": "約24〜25分",
+        "alternatives": [
+          "北国分駅発 → 京成バス［市43］［松54］［松55］（市川駅ゆき）→「道の駅いちかわ（旧：北台）」下車 徒歩5分"
+        ]
+      },
+      "accessByCar": {
+        "nearestIC": "外環自動車道 市川中央IC または 市川北IC",
+        "parking": "無料の可能性が高い（要確認）",
+        "parkingSpaces": "小型車69台／大型車48台／二輪8台／身障者用2台"
+      },
+      "basicInfo": {
+        "openingDate": "2018年（平成30年）4月7日",
+        "operatingHours": "9:00〜22:00（店舗により異なる）",
+        "closedDays": "明確な定休日の記載なし（不定期の全館休業日あり）",
+        "website": "https://www.michinoeki-ichikawa.jp/",
+        "concept": "「地元に愛される、洗練された道の駅」。地元特産品販売・地域食材のイタリアンレストラン・カフェ・カルチャースペースを展開"
+      },
+      "pipeline": {
+        "research": "done",
+        "route": "done",
+        "script": "draft_feedback_pending",
+        "editing": "not_scheduled",
+        "publishDate": null
+      }
+    },
+    {
+      "slug": "shonan",
+      "folder": "2026-07-26_しょうなん",
+      "title": "道の駅しょうなん",
+      "prefecture": "chiba",
+      "address": "千葉県柏市箕輪新田59-2",
+      "visitDate": "2026-07-26",
+      "visitStatus": "planned",
+      "transport": "電車+徒歩",
+      "transportIcon": "🚃",
+      "description": "千葉県柏市 - 「農・食・健康」がテーマの道の駅（我孫子駅がアクセス起点）",
+      "highlight": "「しょうなん野菜バーガー」（マツコの知らない世界で紹介）と木村ピーナッツのソフトクリームが名物。",
+      "planNote": "我孫子駅から徒歩約37分。「マツコの知らない世界」で紹介された、しょうなん野菜バーガーと木村ピーナッツのソフトクリームが目当て。",
+      "accessByTrain": {
+        "nearestStation": "JR常磐線・成田線 我孫子駅",
+        "distance": "約2.9km（南口起点）",
+        "walkingTime": "約37分",
+        "alternatives": [
+          "我孫子駅南口から阪東バス「手賀の杜ニュータウン」行き →「道の駅 沼南前」バス停下車 徒歩約4分"
+        ]
+      },
+      "accessByCar": {
+        "nearestIC": "常磐自動車道 柏IC",
+        "parking": "無料・24時間利用可",
+        "parkingSpaces": "小型車357台（24時間可172台）・大型車29台（24時間可18台）・身障者用10台（24時間可2台）"
+      },
+      "basicInfo": {
+        "openingDate": "2001年（平成13年）4月20日／千葉県内で8番目",
+        "operatingHours": "9:00〜18:00",
+        "closedDays": "年末年始、直売所は毎週第2水曜日も休み",
+        "website": "https://www.michinoeki-shonan.jp/",
+        "concept": "「農・食・健康」、および「知産知消」（地域の農産物と生産者の想いを伝える）"
+      },
+      "internalNote": "やちよの訪問延期（2026-07-22判断）に伴い、同日の代替として追加",
+      "pipeline": {
+        "research": "done",
+        "route": "done",
+        "script": "todo",
+        "editing": "not_scheduled",
+        "publishDate": null
+      }
+    },
+    {
+      "slug": "okegawa",
+      "folder": "2026-08-01_桶川",
+      "title": "道の駅 べに花の郷おけがわ",
+      "prefecture": "saitama",
+      "address": "埼玉県桶川市川田谷4324-1",
+      "visitDate": "2026-08-01",
+      "visitStatus": "planned",
+      "transport": "電車+バス",
+      "transportIcon": "🚃",
+      "description": "埼玉県桶川市 - 食のテーマパーク",
+      "highlight": "名物「べに花の郷おけがわミルクソフト」は市民の花・べに花の形を再現した専用口金仕様。",
+      "planNote": "桶川駅から徒歩50分と遠いので「べにばなGO」バスを利用予定。名物べにばなミルクソフトが狙い目。",
+      "accessByTrain": {
+        "nearestStation": "JR高崎線 桶川駅",
+        "distance": "約4.0km",
+        "walkingTime": "約50分",
+        "alternatives": [
+          "市内循環バス「べにばなGO」西0系統（桶川駅西口発）→「生涯学習センター入口」下車 徒歩3分",
+          "東武バスウエスト（桶川駅西口→川越駅行き）→「川田谷支所」下車 徒歩5分"
+        ]
+      },
+      "accessByCar": {
+        "nearestIC": "首都高速埼玉大宮線から国道17号上尾道路",
+        "parking": "無料・24時間利用可",
+        "parkingSpaces": "普通車189台・大型車43台・身障者用5台（計237台）"
+      },
+      "basicInfo": {
+        "openingDate": "2025年（令和7年）3月27日／埼玉県で21番目",
+        "operatingHours": "9:00〜17:00",
+        "closedDays": "無休（年末年始も営業、店舗により異なる場合あり）",
+        "website": "https://benibananosato-okegawa.com/",
+        "concept": "食のテーマパーク（「人情と活気でおもてなし、温もり宿る桶川で、\"食\"と\"人\"とを繋ぐ」）"
+      },
+      "pipeline": {
+        "research": "done",
+        "route": "done",
+        "script": "done",
+        "editing": "not_scheduled",
+        "publishDate": null
+      }
+    },
+    {
+      "slug": "yachiyo",
+      "folder": "保留_やちよ",
+      "title": "道の駅やちよ",
+      "prefecture": "chiba",
+      "address": "千葉県八千代市島田2076（やちよ農業交流センター）／千葉県八千代市米本4905-1（八千代ふるさとステーション・工事閉鎖中）",
+      "visitDate": null,
+      "visitStatus": "postponed",
+      "postponedReason": "メイン施設「八千代ふるさとステーション」が2025-09-30〜2026-12-28まで防災道の駅リニューアル工事で全面閉鎖中のため、工事完了後に改めて訪問日を設定する方針（2026-07-22判断）。同日（7/26）の代替として道の駅しょうなんを訪問",
+      "transport": "電車+徒歩",
+      "transportIcon": "🚃",
+      "description": "千葉県八千代市 - 体験型の道の駅（リニューアル工事のため訪問延期中）",
+      "highlight": "アイス工房プチシャンテリーの梨アイスなど、地元フルーツを使った季節限定アイスが名物。",
+      "planNote": "メイン施設は工事中のため、リニューアル完了（2026年12月28日以降）後にあらためて訪問予定。",
+      "pipeline": {
+        "research": "done",
+        "route": "todo",
+        "script": "todo",
+        "editing": "not_scheduled",
+        "publishDate": null
+      }
+    },
+    {
+      "slug": "joshu-onishi",
+      "folder": "2026-10-10_上州おにし・万葉の里・上野",
+      "title": "道の駅 上州おにし",
+      "prefecture": "gunma",
+      "address": "群馬県藤岡市譲原1089-2",
+      "visitDate": "2026-10-10",
+      "visitStatus": "planned",
+      "transport": "バス+徒歩",
+      "transportIcon": "🚌",
+      "description": "群馬県藤岡市 - 三波石峡・桜山公園に近い道の駅（奥多野3駅めぐりの1つ）",
+      "planNote": "奥多野エリア3駅めぐりの帰りに立ち寄り予定。名物「下久保ダムカレー」が気になる。",
+      "pipeline": {
+        "research": "done",
+        "route": "done",
+        "script": "todo",
+        "editing": "not_scheduled",
+        "publishDate": null
+      }
+    },
+    {
+      "slug": "manyo-no-sato",
+      "folder": "2026-10-10_上州おにし・万葉の里・上野",
+      "title": "道の駅 万葉の里",
+      "prefecture": "gunma",
+      "address": "群馬県多野郡神流町大字黒田字坂井道下742-1",
+      "visitDate": "2026-10-10",
+      "visitStatus": "planned",
+      "transport": "バス+徒歩",
+      "transportIcon": "🚌",
+      "description": "群馬県神流町 - 神流川沿いの道の駅（奥多野3駅めぐりの1つ）",
+      "planNote": "上野からの徒歩約14kmのゴール地点。神流川沿いの手打ちそばと万葉大吊橋からの景色を楽しみたい。",
+      "pipeline": {
+        "research": "done",
+        "route": "done",
+        "script": "todo",
+        "editing": "not_scheduled",
+        "publishDate": null
+      }
+    },
+    {
+      "slug": "ueno",
+      "folder": "2026-10-10_上州おにし・万葉の里・上野",
+      "title": "道の駅 上野",
+      "prefecture": "gunma",
+      "address": "群馬県多野郡上野村大字勝山甲131",
+      "visitDate": "2026-10-10",
+      "visitStatus": "planned",
+      "transport": "バス",
+      "transportIcon": "🚌",
+      "description": "群馬県上野村 - 奥多野エリア最奥の道の駅（奥多野3駅めぐりの1つ）",
+      "planNote": "始発バスで一番奥の上野村へ。ブランド肉「いのぶた」料理と神流川を望む「うえのテラス」が目当て。",
+      "pipeline": {
+        "research": "done",
+        "route": "done",
+        "script": "todo",
+        "editing": "not_scheduled",
+        "publishDate": null
+      }
+    }
+  ]
+}
