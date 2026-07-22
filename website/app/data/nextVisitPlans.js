@@ -1,68 +1,11 @@
-// このファイルは data/stations.json から自動生成されています。直接編集せず、
-// data/stations.json を編集してから `node scripts/generate-site-data.mjs` を実行してください。
+import { prefectures, formatJaDate, upcomingStations } from './stationsSource.js'
 
-export const nextVisitPlans = [
-  {
-    "name": "道の駅いちかわ",
-    "pref": "千葉県",
-    "when": "2026年7月26日予定",
-    "address": "千葉県市川市国分六丁目10番1号",
-    "transport": "電車+徒歩",
-    "transportIcon": "🚃",
-    "note": "都心に一番近い道の駅。北国分駅から徒歩約25分。地元梨のスイーツとイタリアンレストランが目当て。"
-  },
-  {
-    "name": "道の駅しょうなん",
-    "pref": "千葉県",
-    "when": "2026年7月26日予定",
-    "address": "千葉県柏市箕輪新田59-2",
-    "transport": "電車+徒歩",
-    "transportIcon": "🚃",
-    "note": "我孫子駅から徒歩約37分。「マツコの知らない世界」で紹介された、しょうなん野菜バーガーと木村ピーナッツのソフトクリームが目当て。"
-  },
-  {
-    "name": "道の駅 べに花の郷おけがわ",
-    "pref": "埼玉県",
-    "when": "2026年8月1日予定",
-    "address": "埼玉県桶川市川田谷4324-1",
-    "transport": "電車+バス",
-    "transportIcon": "🚃",
-    "note": "桶川駅から徒歩50分と遠いので「べにばなGO」バスを利用予定。名物べにばなミルクソフトが狙い目。"
-  },
-  {
-    "name": "道の駅 上州おにし",
-    "pref": "群馬県",
-    "when": "2026年10月10日予定",
-    "address": "群馬県藤岡市譲原1089-2",
-    "transport": "バス+徒歩",
-    "transportIcon": "🚌",
-    "note": "奥多野エリア3駅めぐりの帰りに立ち寄り予定。名物「下久保ダムカレー」が気になる。"
-  },
-  {
-    "name": "道の駅 万葉の里",
-    "pref": "群馬県",
-    "when": "2026年10月10日予定",
-    "address": "群馬県多野郡神流町大字黒田字坂井道下742-1",
-    "transport": "バス+徒歩",
-    "transportIcon": "🚌",
-    "note": "上野からの徒歩約14kmのゴール地点。神流川沿いの手打ちそばと万葉大吊橋からの景色を楽しみたい。"
-  },
-  {
-    "name": "道の駅 上野",
-    "pref": "群馬県",
-    "when": "2026年10月10日予定",
-    "address": "群馬県多野郡上野村大字勝山甲131",
-    "transport": "バス",
-    "transportIcon": "🚌",
-    "note": "始発バスで一番奥の上野村へ。ブランド肉「いのぶた」料理と神流川を望む「うえのテラス」が目当て。"
-  },
-  {
-    "name": "道の駅やちよ",
-    "pref": "千葉県",
-    "when": "未定（延期中）",
-    "address": "千葉県八千代市島田2076（やちよ農業交流センター）／千葉県八千代市米本4905-1（八千代ふるさとステーション・工事閉鎖中）",
-    "transport": "電車+徒歩",
-    "transportIcon": "🚃",
-    "note": "メイン施設は工事中のため、リニューアル完了（2026年12月28日以降）後にあらためて訪問予定。"
-  }
-]
+export const nextVisitPlans = upcomingStations().map((s) => ({
+  name: s.title,
+  pref: prefectures[s.prefecture].name,
+  when: s.visitDate ? `${formatJaDate(s.visitDate)}予定` : '未定（延期中）',
+  address: s.address,
+  transport: s.transport,
+  transportIcon: s.transportIcon,
+  note: s.planNote ?? s.highlight ?? '',
+}))

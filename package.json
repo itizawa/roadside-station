@@ -3,9 +3,8 @@
   "private": true,
   "scripts": {
     "install:website": "pnpm --dir website install",
-    "generate:site-data": "node scripts/generate-site-data.mjs",
-    "dev": "npm run generate:site-data && pnpm --dir website dev",
-    "build": "npm run generate:site-data && pnpm --dir website build",
+    "dev": "pnpm --dir website dev",
+    "build": "pnpm --dir website build",
     "preview": "pnpm --dir website preview"
   }
 }

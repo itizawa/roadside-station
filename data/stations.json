@@ -1,5 +1,5 @@
 {
-  "_comment": "このファイルが道の駅めぐりプロジェクトのSSOT（唯一の正）です。scripts/generate-site-data.mjs がここから website/app/data/*.js を自動生成します。docs/progress.md の『投稿ステータス一覧』の元データもここにあります。手動で編集した後は `node scripts/generate-site-data.mjs` を実行してください。",
+  "_comment": "このファイルが道の駅めぐりプロジェクトのSSOT（唯一の正）です。website/app/data/*.js は website/app/data/stationsSource.js 経由でこのファイルを直接読み込み、その都度ここから表示用データを計算します（生成ファイルはありません）。docs/progress.md の『投稿ステータス一覧』の元データもここにあります。",
   "prefectures": {
     "gunma": { "name": "群馬県", "total": 33 },
     "tochigi": { "name": "栃木県", "total": 25 },
