@@ -1,3 +1,4 @@
+import type { Config } from '@react-router/dev/config'
 import { stations } from './app/data/stations'
 
 export default {
@@ -7,4 +8,4 @@ export default {
     ...getStaticPaths(), // "/", "/roadside-stations", "/visit-history" は自動収集される
     ...stations.map((s) => `/roadside-stations/${s.slug}`),
   ],
-}
+} satisfies Config

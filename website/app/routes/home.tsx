@@ -1,15 +1,16 @@
 import { stations } from '../data/stations'
 import { nextVisits } from '../data/nextVisits'
-import { profile, socialLinks } from '../data/profile.js'
+import { profile, socialLinks } from '../data/profile'
 import { visitStats, prefectureMap } from '../data/visitStats'
-import StationCard from '../components/StationCard.jsx'
+import StationCard from '../components/StationCard'
+import type { Route } from './+types/home'
 
 export function loader() {
-  const sorted = [...stations].sort((a, b) => new Date(b.date) - new Date(a.date))
+  const sorted = [...stations].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   return { recentVisits: sorted.slice(0, 3) }
 }
 
-export default function Home({ loaderData }) {
+export default function Home({ loaderData }: Route.ComponentProps) {
   const { recentVisits } = loaderData
 
   return (

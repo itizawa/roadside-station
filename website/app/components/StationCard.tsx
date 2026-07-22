@@ -1,6 +1,12 @@
 import { Link } from 'react-router'
+import type { FeaturedStation } from '../data/stations'
 
-export default function StationCard({ station, variant = 'default' }) {
+interface StationCardProps {
+  station: FeaturedStation
+  variant?: 'default' | 'feature'
+}
+
+export default function StationCard({ station, variant = 'default' }: StationCardProps) {
   const formattedDate = new Date(station.date).toLocaleDateString('ja-JP', {
     year: 'numeric',
     month: 'long',

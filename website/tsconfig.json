@@ -6,13 +6,18 @@
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "allowJs": true,
-    "checkJs": false,
     "jsx": "react-jsx",
     "strict": true,
     "skipLibCheck": true,
     "isolatedModules": true,
+    "rootDirs": [".", "./.react-router/types"],
     "noEmit": true
   },
-  "include": ["app/**/*", "react-router.config.js", "vite.config.js"]
+  "include": [
+    "app/**/*",
+    "scripts/**/*",
+    "react-router.config.ts",
+    "vite.config.ts",
+    ".react-router/types/**/*"
+  ]
 }

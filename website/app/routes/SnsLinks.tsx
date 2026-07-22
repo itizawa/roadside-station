@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import { snsLinks } from '../data/snsLinks.js'
+import { snsLinks } from '../data/snsLinks'
 
 export default function SnsLinks() {
   return (
