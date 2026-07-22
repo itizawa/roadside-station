@@ -6,7 +6,7 @@ export function meta() {
     { title: '訪問済み道の駅一覧 | 道の駅めぐり日記' },
     {
       name: 'description',
-      content: '関東の道の駅を「徒歩」で巡り、YouTube・ブログ/noteで発信するプロジェクトの訪問済み道の駅一覧です。',
+      content: '関東甲信の道の駅を「徒歩」で巡り、YouTube・ブログ/noteで発信するプロジェクトの訪問済み道の駅一覧です。',
     },
   ]
 }
@@ -21,7 +21,7 @@ export default function StationList({ loaderData: sorted }) {
       <div className="page-header">
         <h1>道の駅巡り</h1>
         <p className="description">
-          関東の道の駅を「徒歩」で巡り、YouTube・ブログ/noteで発信するプロジェクトです。
+          関東甲信の道の駅を「徒歩」で巡り、YouTube・ブログ/noteで発信するプロジェクトです。
         </p>
       </div>
 

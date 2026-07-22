@@ -18,7 +18,7 @@ export default function Home({ loaderData }) {
         <div className="hero-text">
           <h1>道の駅を、<br />てくてく巡る。</h1>
           <p className="tagline">
-            関東7県の道の駅を、車と徒歩でのんびり巡っています。行けるところから少しずつ、制覇を目指す記録です。
+            関東7県に山梨・長野を加えた道の駅を、車と徒歩でのんびり巡っています。行けるところから少しずつ、制覇を目指す記録です。
           </p>
         </div>
         <svg viewBox="0 0 200 120" className="hero-illustration" aria-hidden="true">
@@ -43,7 +43,7 @@ export default function Home({ loaderData }) {
           <h2>訪問済み道の駅</h2>
           <div className="visit-stats-total">
             <span className="number">{visitStats.totalVisited}</span>
-            <span className="unit">/ 関東{visitStats.totalStations}駅</span>
+            <span className="unit">/ 関東甲信{visitStats.totalStations}駅</span>
           </div>
           <ul className="prefecture-list">
             {visitStats.prefectures.map((pref) => (

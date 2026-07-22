@@ -6,7 +6,7 @@ import './styles/style.css'
 export function meta() {
   return [
     { title: '道の駅めぐり日記' },
-    { name: 'description', content: '関東7県の道の駅を、車と徒歩でのんびり巡る記録' },
+    { name: 'description', content: '関東甲信の道の駅を、車と徒歩でのんびり巡る記録' },
   ]
 }
 
