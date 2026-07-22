@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import { snsLinks } from '../data/snsLinks.js'
 
 export default function SnsLinks() {
