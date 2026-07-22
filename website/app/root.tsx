@@ -1,6 +1,7 @@
+import type { ReactNode } from 'react'
 import { Meta, Links, Outlet, Scripts, ScrollRestoration } from 'react-router'
-import Header from './components/Header.jsx'
-import Footer from './components/Footer.jsx'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import './styles/style.css'
 
 export function meta() {
@@ -21,7 +22,7 @@ export function links() {
   ]
 }
 
-export function Layout({ children }) {
+export function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="ja">
       <head>

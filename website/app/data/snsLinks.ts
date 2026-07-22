@@ -1,4 +1,4 @@
-export const snsLinks = [
+export const snsLinks: { label: string; initial: string; handle: string; href: string | null; desc: string }[] = [
   {
     label: 'Instagram',
     initial: 'IG',

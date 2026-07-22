@@ -1,8 +1,9 @@
 import { Link } from 'react-router'
 import ReactMarkdown from 'react-markdown'
 import { stations } from '../data/stations'
+import type { Route } from './+types/station-detail'
 
-export function loader({ params }) {
+export function loader({ params }: Route.LoaderArgs) {
   const station = stations.find((s) => s.slug === params.slug)
   if (!station) {
     throw new Response('Not Found', { status: 404 })
@@ -10,7 +11,7 @@ export function loader({ params }) {
   return station
 }
 
-export function meta({ loaderData: station }) {
+export function meta({ loaderData: station }: Route.MetaArgs) {
   if (!station) {
     return [{ title: '道の駅が見つかりません | 道の駅めぐり日記' }]
   }
@@ -29,7 +30,7 @@ export function ErrorBoundary() {
   )
 }
 
-export default function StationDetail({ loaderData: station }) {
+export default function StationDetail({ loaderData: station }: Route.ComponentProps) {
   const formattedDate = new Date(station.date).toLocaleDateString('ja-JP', {
     year: 'numeric',
     month: 'long',

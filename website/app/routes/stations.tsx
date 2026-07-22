@@ -1,5 +1,6 @@
 import { stations } from '../data/stations'
-import StationCard from '../components/StationCard.jsx'
+import StationCard from '../components/StationCard'
+import type { Route } from './+types/stations'
 
 export function meta() {
   return [
@@ -12,10 +13,10 @@ export function meta() {
 }
 
 export function loader() {
-  return [...stations].sort((a, b) => new Date(b.date) - new Date(a.date))
+  return [...stations].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
-export default function StationList({ loaderData: sorted }) {
+export default function StationList({ loaderData: sorted }: Route.ComponentProps) {
   return (
     <>
       <div className="page-header">

@@ -16,7 +16,7 @@ function buildContent(station: Station): string {
 export const stations = visitedStations.map((s) => ({
   slug: s.slug,
   title: s.title,
-  date: s.visitDate,
+  date: s.visitDate as string,
   description: s.description,
   location: s.address,
   ...(s.accessByTrain ? { accessByTrain: s.accessByTrain } : {}),
@@ -24,3 +24,5 @@ export const stations = visitedStations.map((s) => ({
   ...(s.basicInfo ? { basicInfo: s.basicInfo } : {}),
   content: buildContent(s),
 }))
+
+export type FeaturedStation = (typeof stations)[number]

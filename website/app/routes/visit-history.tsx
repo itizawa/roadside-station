@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import { visitHistory } from '../data/visitHistory'
+import type { Route } from './+types/visit-history'
 
 export function meta() {
   return [
@@ -12,7 +13,7 @@ export function loader() {
   return visitHistory
 }
 
-export default function VisitHistory({ loaderData: visitHistory }) {
+export default function VisitHistory({ loaderData: visitHistory }: Route.ComponentProps) {
   return (
     <>
       <div className="visit-history-header">
