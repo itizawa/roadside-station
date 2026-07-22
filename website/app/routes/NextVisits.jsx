@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import { nextVisitPlans } from '../data/nextVisitPlans.js'
+import { nextVisitPlans } from '../data/nextVisitPlans'
 
 export default function NextVisits() {
   return (

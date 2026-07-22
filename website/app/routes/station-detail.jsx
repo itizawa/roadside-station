@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import ReactMarkdown from 'react-markdown'
-import { stations } from '../data/stations.js'
+import { stations } from '../data/stations'
 
 export function loader({ params }) {
   const station = stations.find((s) => s.slug === params.slug)
