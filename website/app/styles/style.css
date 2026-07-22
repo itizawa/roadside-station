@@ -473,6 +473,28 @@ p {
   color: #666;
 }
 
+/* ===== Route Map ===== */
+.route-map-wrapper {
+  margin-top: 1.5rem;
+}
+
+.route-map {
+  width: 100%;
+  height: 360px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.route-map-icon-emoji {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.route-map-replay {
+  margin-top: 0.75rem;
+}
+
 /* ===== Definition List ===== */
 dl {
   margin: 1rem 0;
