@@ -726,10 +726,6 @@ dt:first-child {
   background: oklch(72% 0.14 70);
 }
 
-.visit-map-icon-dot--postponed {
-  background: oklch(65% 0.01 250);
-}
-
 .leaflet-div-icon.visit-map-icon {
   background: transparent;
   border: none;
@@ -765,10 +761,6 @@ dt:first-child {
 
 .visit-map-popup-status--planned {
   color: oklch(55% 0.15 70);
-}
-
-.visit-map-popup-status--postponed {
-  color: oklch(50% 0.01 250);
 }
 
 .visit-map-popup-link {

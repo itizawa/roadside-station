@@ -11,7 +11,6 @@ interface VisitMapProps {
 const STATUS_LABEL: Record<MapStation['visitStatus'], string> = {
   visited: '訪問済み',
   planned: '訪問予定',
-  postponed: '延期中',
 }
 
 export default function VisitMap({ stations }: VisitMapProps) {
@@ -39,9 +38,9 @@ export default function VisitMap({ stations }: VisitMapProps) {
         map.fitBounds(bounds, { padding: [32, 32] })
       }
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        maxZoom: 19,
+      L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {
+        attribution: '<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener noreferrer">地理院タイル</a>',
+        maxZoom: 18,
       }).addTo(map)
 
       resizeObserver = new ResizeObserver(() => map?.invalidateSize())
@@ -106,10 +105,6 @@ export default function VisitMap({ stations }: VisitMapProps) {
         <li className="visit-map-legend-item">
           <span className="visit-map-icon-dot visit-map-icon-dot--planned" />
           訪問予定
-        </li>
-        <li className="visit-map-legend-item">
-          <span className="visit-map-icon-dot visit-map-icon-dot--postponed" />
-          延期中
         </li>
       </ul>
     </div>
