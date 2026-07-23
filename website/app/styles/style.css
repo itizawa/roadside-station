@@ -664,46 +664,116 @@ dt:first-child {
   margin-bottom: 10px;
 }
 
-.visit-map {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  background: linear-gradient(160deg, oklch(97% 0.015 235), oklch(93% 0.02 235));
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.map-blob {
-  position: absolute;
-  border-radius: 46% 54% 52% 48% / 48% 46% 54% 52%;
-  background: oklch(94% 0.02 238);
-  border: 2px solid oklch(85% 0.03 240);
-  box-shadow: 0 4px 10px oklch(30% 0.05 250 / 0.12);
+.visit-map-wrapper {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+.visit-map {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 260px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: oklch(93% 0.02 235);
+}
+
+@media (min-width: 640px) {
+  .visit-map {
+    height: 340px;
+  }
+}
+
+.visit-map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.visit-map-legend-item {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1px;
-}
-
-.map-blob.is-visited {
-  background: var(--c-mid);
-  border-color: var(--c-deep);
-}
-
-.map-blob-name {
-  font-size: 10px;
-  font-weight: 700;
-  color: oklch(45% 0.03 250);
-  text-align: center;
-}
-
-.map-blob.is-visited .map-blob-name {
-  color: var(--c-white);
-}
-
-.map-blob-mark {
+  gap: 6px;
   font-size: 11px;
+  color: var(--c-ink);
+  opacity: 0.85;
+}
+
+.visit-map-legend-item .visit-map-icon-dot {
+  width: 10px;
+  height: 10px;
+}
+
+.visit-map-icon-dot {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--c-white);
+  box-shadow: 0 2px 6px oklch(30% 0.05 250 / 0.35);
+}
+
+.visit-map-icon-dot--visited {
+  background: var(--c-deep);
+}
+
+.visit-map-icon-dot--planned {
+  background: oklch(72% 0.14 70);
+}
+
+.visit-map-icon-dot--postponed {
+  background: oklch(65% 0.01 250);
+}
+
+.leaflet-div-icon.visit-map-icon {
+  background: transparent;
+  border: none;
+}
+
+.visit-map-popup {
+  min-width: 160px;
+}
+
+.visit-map-popup-title {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--c-ink);
+}
+
+.visit-map-popup-address {
+  margin: 0 0 4px;
+  font-size: 11px;
+  color: var(--c-ink);
+  opacity: 0.75;
+}
+
+.visit-map-popup-status {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.visit-map-popup-status--visited {
+  color: var(--c-deep);
+}
+
+.visit-map-popup-status--planned {
+  color: oklch(55% 0.15 70);
+}
+
+.visit-map-popup-status--postponed {
+  color: oklch(50% 0.01 250);
+}
+
+.visit-map-popup-link {
+  width: 100%;
+  text-align: center;
 }
 
 /* ===== Feature Station Card (Recent Visits) ===== */

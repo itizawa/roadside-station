@@ -1,8 +1,10 @@
 import { stations } from '../data/stations'
 import { nextVisits } from '../data/nextVisits'
 import { profile, socialLinks } from '../data/profile'
-import { visitStats, prefectureMap } from '../data/visitStats'
+import { visitStats } from '../data/visitStats'
+import { mapStations } from '../data/mapStations'
 import StationCard from '../components/StationCard'
+import VisitMap from '../components/VisitMap'
 import type { Route } from './+types/home'
 
 export function loader() {
@@ -58,30 +60,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
         <div className="visit-map-card">
           <h2>訪問マップ</h2>
-          <div className="visit-map">
-            {prefectureMap.map((p) => (
-              <div
-                key={p.key}
-                className={`map-blob ${p.visited ? 'is-visited' : ''}`}
-                style={{
-                  top: `${p.top}%`,
-                  left: `${p.left}%`,
-                  width: `${p.w}%`,
-                  height: `${p.h}%`,
-                  transform: `rotate(${p.rotate}deg)`,
-                }}
-              >
-                <div className="map-blob-name" style={{ transform: `rotate(${-p.rotate}deg)` }}>
-                  {p.name}
-                </div>
-                {p.visited && (
-                  <div className="map-blob-mark" style={{ transform: `rotate(${-p.rotate}deg)` }}>
-                    ✓
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          <VisitMap stations={mapStations} />
         </div>
       </section>
 
