@@ -72,15 +72,18 @@
   - 明治期に化学染料の普及で衰退
 - 周辺は新田開発により関東有数の穀倉地帯として発展した歴史がある
 - 桶川市は近隣の市町と比べて酪農業が盛ん。県産牛乳・卵を使ったスイーツに力を入れている【運営会社ベニネクスト公式プレスリリースで確認済み】
+- 紅花栽培は平成に入り一度「復活」している。桶川ロータリークラブが平成5年（1993年）に山形県河北町から種子を譲り受け、平成6年（1994年）3月に川田谷の富士見ホタル親水公園で試験栽培を開始。平成8年（1996年）に第1回べに花まつりが開催され、これが現在の街づくり「べに花の郷」の直接の原点になった【桶川市公式「べにばな物語」で確認済み】
+- 桶川市赤堀には、釣りエサ国内トップシェアメーカー「マルキユー株式会社」の本社がある。1910年（明治43年）創業、当初は製糸業の副産物「さなぎ」を使った飼料製造からスタート。1967年に後発メーカーとして釣りエサ製造に参入し、現在は国内トップシェアに成長した【マルキユー公式サイト「会社沿革」で確認済み】
 
 ## 参考リンク
 
 - [道の駅べに花の郷おけがわ 公式サイト](https://benibananosato-okegawa.com/)
 - [道の駅べに花の郷おけがわ【公式】Instagram](https://www.instagram.com/benibana.okegawa/)
+- [マルキユー株式会社 公式サイト「会社沿革」](https://www.marukyu.com/company-enkaku/)
 - [全国「道の駅」連絡会 登録ページ](https://www.michi-no-eki.jp/stations/views/22524)
 - [関東「道の駅」公式ホームページ](https://www.kanto-michinoeki.jp/map_single.php?id_name=3&single_name=20)
 - [道の駅 べに花の郷おけがわ | NAVITIME](https://www.navitime.co.jp/poi?spot=06085-22524)
-- [桶川市「べにばな物語」（紅花の歴史）](https://www.city.okegawa.lg.jp/soshiki/hisyoshitsu/hisyokoho/shokai/shokai/1931.html)
+- [桶川市「べにばな物語」（紅花の歴史・平成の復活の経緯）](https://www.city.okegawa.lg.jp/soshiki/hisyoshitsu/hisyokoho/shokai/shokai/1931.html)
 - [桶川市 道の駅ページ（ドッグラン工事のお知らせ）](https://www.city.okegawa.lg.jp/soshiki/shiminseikatsu/michinoeki/machidukuri/michinoeki/13649.html)
 - [桶川市 市内循環バス「べにばなGO」運行内容](https://www.city.okegawa.lg.jp/soshiki/shiminseikatsu/anshinanzen/kotsu_churinjo/bus/8105.html)
 - [ベニネクスト グランドオープン プレスリリース第2弾](https://www.atpress.ne.jp/news/430413)
