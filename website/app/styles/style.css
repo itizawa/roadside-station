@@ -359,6 +359,11 @@ p {
   color: #f57c00;
 }
 
+.badge-planned {
+  background: #fff3e0;
+  color: #c2740a;
+}
+
 /* ===== Buttons ===== */
 .btn {
   display: inline-block;

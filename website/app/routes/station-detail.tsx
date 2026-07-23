@@ -1,11 +1,11 @@
 import { Link } from 'react-router'
 import ReactMarkdown from 'react-markdown'
-import { stations } from '../data/stations'
+import { detailStations } from '../data/stations'
 import RouteMap from '../components/RouteMap'
 import type { Route } from './+types/station-detail'
 
 export function loader({ params }: Route.LoaderArgs) {
-  const station = stations.find((s) => s.slug === params.slug)
+  const station = detailStations.find((s) => s.slug === params.slug)
   if (!station) {
     throw new Response('Not Found', { status: 404 })
   }
@@ -45,9 +45,12 @@ export default function StationDetail({ loaderData: station }: Route.ComponentPr
         <p className="tagline">{station.description}</p>
         <div className="meta">
           <span>📍 {station.location}</span>
-          <span>📅 {formattedDate}</span>
+          <span>📅 {station.visitStatus === 'planned' ? '訪問予定日' : '訪問日'}：{formattedDate}</span>
         </div>
         <div className="access-types" style={{ marginTop: '1rem' }}>
+          {station.visitStatus === 'planned' && (
+            <span className="badge badge-planned">🔜 訪問予定</span>
+          )}
           {station.accessByTrain && (
             <span className="badge badge-train">🚇 電車+徒歩</span>
           )}
