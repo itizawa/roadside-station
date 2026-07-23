@@ -892,6 +892,7 @@ dt:first-child {
 }
 
 .next-up-name {
+  display: block;
   font-size: 14px;
   font-weight: 700;
   color: var(--c-ink);

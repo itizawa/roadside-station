@@ -23,7 +23,7 @@ export default function VisitHistory({ loaderData: visitHistory }: Route.Compone
 
       <div className="visit-history-list">
         {visitHistory.map((v) => (
-          <div key={v.overallNo} className="visit-history-card">
+          <Link key={v.overallNo} to={`/roadside-stations/${v.slug}`} className="visit-history-card">
             <div className="visit-badges">
               <span className="visit-badge visit-badge-overall">全体 {v.overallNo} / {v.overallTotal}</span>
               <span className="visit-badge visit-badge-pref">{v.pref} {v.prefNo} / {v.prefTotal}</span>
@@ -41,7 +41,7 @@ export default function VisitHistory({ loaderData: visitHistory }: Route.Compone
               <div className="visit-history-recommend-label">おすすめ</div>
               <div className="visit-history-recommend-text">{v.recommend}</div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 

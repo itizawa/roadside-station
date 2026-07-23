@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import { stations } from '../data/stations'
 import { nextVisits } from '../data/nextVisits'
 import { profile, socialLinks } from '../data/profile'
@@ -88,7 +89,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                   {i < nextVisits.length - 1 && <span className="next-up-line-rest" />}
                 </div>
                 <div className="next-up-content">
-                  <p className="next-up-name">{visit.name}</p>
+                  {visit.visitStatus === 'planned' ? (
+                    <Link to={`/roadside-stations/${visit.slug}`} className="next-up-name">
+                      {visit.name}
+                    </Link>
+                  ) : (
+                    <p className="next-up-name">{visit.name}</p>
+                  )}
                   <p className="next-up-meta">{visit.prefecture}　{visit.schedule}</p>
                 </div>
               </li>

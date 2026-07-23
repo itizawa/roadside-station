@@ -1,6 +1,7 @@
 import { prefectures, formatJaDate, sortedVisitsWithCounters } from './stationsSource'
 
 export const visitHistory = sortedVisitsWithCounters().map(({ station: s, overallNo, overallTotal, prefNo }) => ({
+  slug: s.slug,
   overallNo,
   overallTotal,
   pref: prefectures[s.prefecture].name,
