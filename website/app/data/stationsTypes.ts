@@ -14,6 +14,7 @@ export interface AccessByTrain {
   distance: string
   walkingTime: string
   alternatives: string[]
+  routeWaypoints?: Coordinates[]
 }
 
 export interface AccessByCar {

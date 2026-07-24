@@ -93,6 +93,7 @@ export default function StationDetail({ loaderData: station }: Route.ComponentPr
               originLabel={station.accessByTrain.nearestStation}
               destination={station.coordinates}
               destinationLabel={station.title}
+              waypoints={station.accessByTrain.routeWaypoints}
             />
           )}
         </section>
