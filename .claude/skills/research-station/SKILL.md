@@ -95,11 +95,30 @@ claude-in-chrome を使い、最寄り駅から道の駅までの徒歩ルート
 - ダイアログ（alert/confirm等）を発生させる操作は避ける
 - 取得できた画像がある場合のみ完了報告に含める。取得に失敗した場合は「地図画像は要確認」として報告する
 
-### 7. 完了報告
+### 7. サイト詳細画面の地図アニメーション用ウェイポイントの生成
+
+道の駅詳細ページ（`website/app/components/RouteMap.tsx`）は、最寄り駅と道の駅を結ぶピンを道なりにアニメーションさせる。この経路（道路形状の座標列）を `data/stations.json` の `accessByTrain.routeWaypoints` に追加する。
+
+1. `data/stations.json` から対象道の駅の `accessByTrain.nearestStationCoordinates`（出発地）と `coordinates`（到着地）を取得する
+2. OSRM の公開ルーティングAPI（徒歩プロファイル）に問い合わせて実際の道路形状を取得する
+   ```
+   curl "https://router.project-osrm.org/route/v1/foot/{出発地lng},{出発地lat};{到着地lng},{到着地lat}?overview=full&geometries=geojson"
+   ```
+   - 返ってきた `distance`（m）が route.md 記載の距離と大きく食い違う場合でも、既存の座標（マーカー位置）に対する道路追従ルートとして地図表示上は問題ない。route.md側の数値を修正する必要はない
+3. 取得した座標列（数十〜100点超）を Ramer-Douglas-Peucker法などで間引き、15〜25点程度に単純化する（点が多すぎるとJSONが肥大化するため）
+4. 間引いた座標列を `{ "lat": ..., "lng": ... }` の配列として `accessByTrain.routeWaypoints` に追加する（出発地・到着地自体は `nearestStationCoordinates`/`coordinates` で既に表現されているため含めない）
+5. `npm run typecheck`（`website/`ディレクトリ）でエラーがないことを確認し、可能であれば dev サーバーで詳細ページの地図を目視確認する
+
+**注意:**
+- OSRM公開デモサーバーはレート制限があるため、1駅あたり1回のリクエストに留める
+- ウェイポイントが無くても `RouteMap` は起点・終点の直線アニメーションにフォールバックするため、取得に失敗した場合は無理に追加せず「要確認」として報告してよい
+
+### 8. 完了報告
 
 - 調査結果の要点（営業時間・アクセス・名物・撮影上の注意）をまとめて報告する
 - 「要確認」として残した項目を列挙する
 - 地図画像（`assets/route-map-osm.png`）の取得可否を報告する
+- `routeWaypoints` の追加可否を報告する
 - 採用したトリビアと、`docs/learnings.md` に追記した内容（個別ログ・傾向の更新有無）を報告する
 - 次のステップ（route.md の作成 = 徒歩ルートの詳細化、script.md の作成は `script-station` スキル）を案内する
 
