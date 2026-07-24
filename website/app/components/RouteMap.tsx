@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import 'leaflet/dist/leaflet.css'
 import type { Coordinates } from '../data/stationsTypes'
 
@@ -11,6 +11,7 @@ interface RouteMapProps {
 }
 
 const ANIMATION_DURATION_MS = 2800
+const ANIMATION_LOOP_PAUSE_MS = 1000
 
 function easeInOutQuad(t: number): number {
   return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2
@@ -54,7 +55,6 @@ function pointAtRatio(pathWithRatios: { point: Coordinates; ratio: number }[], r
 
 export default function RouteMap({ origin, originLabel, destination, destinationLabel, waypoints }: RouteMapProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [replayToken, setReplayToken] = useState(0)
 
   useEffect(() => {
     if (!containerRef.current) return
@@ -62,6 +62,7 @@ export default function RouteMap({ origin, originLabel, destination, destination
     let cancelled = false
     let map: import('leaflet').Map | undefined
     let animationFrameId: number | undefined
+    let loopTimeoutId: ReturnType<typeof setTimeout> | undefined
 
     import('leaflet').then((L) => {
       if (cancelled || !containerRef.current) return
@@ -128,6 +129,7 @@ export default function RouteMap({ origin, originLabel, destination, destination
       let startTime: number | undefined
 
       const step = (timestamp: number) => {
+        if (cancelled) return
         if (startTime === undefined) startTime = timestamp
         const elapsed = timestamp - startTime
         const progress = Math.min(elapsed / ANIMATION_DURATION_MS, 1)
@@ -138,6 +140,13 @@ export default function RouteMap({ origin, originLabel, destination, destination
 
         if (progress < 1) {
           animationFrameId = requestAnimationFrame(step)
+        } else {
+          loopTimeoutId = setTimeout(() => {
+            if (cancelled) return
+            pin.setLatLng(originLatLng)
+            startTime = undefined
+            animationFrameId = requestAnimationFrame(step)
+          }, ANIMATION_LOOP_PAUSE_MS)
         }
       }
 
@@ -147,20 +156,14 @@ export default function RouteMap({ origin, originLabel, destination, destination
     return () => {
       cancelled = true
       if (animationFrameId !== undefined) cancelAnimationFrame(animationFrameId)
+      if (loopTimeoutId !== undefined) clearTimeout(loopTimeoutId)
       map?.remove()
     }
-  }, [origin, originLabel, destination, destinationLabel, waypoints, replayToken])
+  }, [origin, originLabel, destination, destinationLabel, waypoints])
 
   return (
     <div className="route-map-wrapper">
       <div ref={containerRef} className="route-map" />
-      <button
-        type="button"
-        className="btn btn-small route-map-replay"
-        onClick={() => setReplayToken((token) => token + 1)}
-      >
-        ▶ ルートアニメーションをもう一度見る
-      </button>
     </div>
   )
 }
